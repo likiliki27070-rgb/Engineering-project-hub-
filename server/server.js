@@ -774,6 +774,11 @@ app.put('/api/settings', (req, res) => {
   res.json(db.siteSettings);
 });
 
-app.listen(PORT, () => {
-  console.log(`[LIMO Backend] Server listening on http://localhost:${PORT}`);
-});
+export default app;
+
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`[LIMO Backend] Server listening on http://localhost:${PORT}`);
+  });
+}
+
