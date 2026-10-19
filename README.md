@@ -9,15 +9,15 @@ A next-generation platform for showcasing, exploring, and managing cutting-edge 
 
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-black?style=for-the-badge&logo=vercel)](https://temporary-express-tuba-avfyt8a.vercel.app)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/likiliki27070-rgb/Engineering-project-hub-)
+[![Android](https://img.shields.io/badge/Android-Capacitor_Native-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://capacitorjs.com/)
+[![PWA](https://img.shields.io/badge/PWA-Installable-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
 [![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Express](https://img.shields.io/badge/Express-4.21-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 <br/>
 
-🌐 **[Experience the Live Web Application](https://temporary-express-tuba-avfyt8a.vercel.app)** • 📖 **[API Reference](#-api-documentation)** • 🛠️ **[Local Setup](#-local-installation--setup-guide)**
+🌐 **[Experience Live Web App](https://temporary-express-tuba-avfyt8a.vercel.app)** • 📱 **[Mobile App Guide](#-mobile-application-android--pwa)** • 🛠️ **[Local Setup](#-local-installation--setup-guide)** • 📖 **[API Reference](#-api-documentation)**
 
 </div>
 
@@ -28,14 +28,15 @@ A next-generation platform for showcasing, exploring, and managing cutting-edge 
 1. [🌟 Project Overview](#-project-overview)
 2. [✨ Key Features (A to Z)](#-key-features-a-to-z)
 3. [🏛️ Architecture & Tech Stack](#️-architecture--tech-stack)
-4. [🚗 Featured Engineering Project: LIMO](#-featured-engineering-project-limo)
-5. [🌐 Live Deployment Links](#-live-deployment-links)
-6. [🛠️ Local Installation & Setup Guide](#️-local-installation--setup-guide)
-7. [📡 API Documentation](#-api-documentation)
-8. [📁 Repository Structure](#-repository-structure)
-9. [⚙️ Deployment Guide (Vercel)](#️-deployment-guide-vercel)
-10. [👥 Contributors & Creators](#-contributors--creators)
-11. [📄 License](#-license)
+4. [📱 Mobile Application (Android & PWA)](#-mobile-application-android--pwa)
+5. [🚗 Featured Engineering Project: LIMO](#-featured-engineering-project-limo)
+6. [🌐 Live Deployment Links](#-live-deployment-links)
+7. [🛠️ Local Installation & Setup Guide](#️-local-installation--setup-guide)
+8. [📡 API Documentation](#-api-documentation)
+9. [📁 Repository Structure](#-repository-structure)
+10. [⚙️ Deployment Guide (Vercel & Mobile CI/CD)](#️-deployment-guide-vercel--mobile-cicd)
+11. [👥 Contributors & Creators](#-contributors--creators)
+12. [📄 License](#-license)
 
 ---
 
@@ -43,7 +44,7 @@ A next-generation platform for showcasing, exploring, and managing cutting-edge 
 
 **Engineering Project Hub (LIMO)** is an interactive, full-stack platform engineered to centralize academic, industrial, and open-source engineering achievements. It addresses the fragmentation of engineering portfolios by providing an immersive, 3D-accelerated environment where developers, researchers, students, and institutions can discover, analyze, and publish groundbreaking innovations across 20+ specialized disciplines.
 
-From quantum computing and autonomous robotics to renewable energy grids, embedded IoT systems, and zero-knowledge blockchains, the Engineering Project Hub provides rich telemetry, downloadable technical bundles, algorithmic formulations, and collaborative discussion boards.
+From quantum computing and autonomous robotics to renewable energy grids, embedded IoT systems, and zero-knowledge blockchains, the Engineering Project Hub provides rich telemetry, downloadable technical bundles, algorithmic formulations, collaborative discussion boards, and **native cross-platform mobile access**.
 
 ---
 
@@ -51,6 +52,7 @@ From quantum computing and autonomous robotics to renewable energy grids, embedd
 
 - **🎨 3D Interactive Particle Canvas**: Dynamic HTML5 canvas background rendering real-time particle physics, constellation networks, and cursor-reactive gravitational wave simulations.
 - **📊 Admin Control Center**: Comprehensive dashboard allowing platform moderators to monitor metrics, approve pending project submissions, manage creator rosters, broadcast system alerts, and inspect audit activity logs.
+- **📱 Android Native Application**: Complete native Android project container powered by Capacitor 8, featuring adaptive launcher icons, dark status bar integration, safe-area padding, and hardware back-button navigation.
 - **🏷️ 20+ Engineering Disciplines**: Multi-domain classification spanning AI/ML, Quantum Computing, Robotics, Cyber-Physical Systems, Electrical, Mechanical, Civil, eBPF Kernel, Blockchain, and Renewable Energy.
 - **🔎 Advanced Search & Multi-Criteria Filtering**: Instantaneous debounced filtering by full-text query, discipline, technology stack, difficulty tier (Beginner, Intermediate, Advanced), and sort order (Latest, Most Viewed, Most Liked, A-Z).
 - **💡 Algorithmic Formulation Deep-Dives**: Detailed theoretical breakdowns of mathematical frameworks (e.g., QUBO matrix formulations, QAOA Hamiltonian circuits, eBPF kernel hooks, zk-SNARK constraints).
@@ -59,6 +61,7 @@ From quantum computing and autonomous robotics to renewable energy grids, embedd
 - **⚡ Dual-Mode Full-Stack Architecture**: Runs concurrently in development via custom orchestrator (`dev-runner.js`) and compiles into high-performance serverless edge functions on Vercel.
 - **🔐 Multi-Role Authentication**: JWT-compatible credential and demo session workflows supporting Administrator, Researcher, Student, and Guest privileges.
 - **💬 Peer Discussion & Engagement**: Interactive comment threads, real-time upvoting counters, view analytics, and social share modals with one-click clipboard copying.
+- **📲 Progressive Web App (PWA)**: Installable directly from mobile and desktop browsers (Chrome, Edge, Safari) via `manifest.json` and offline-capable Service Worker (`sw.js`).
 - **📱 Responsive Glassmorphic Interface**: Fully mobile-responsive layout crafted with clean vanilla CSS tokens, backdrop blurs, glow accents, and fluid typography (Outfit, Inter, and JetBrains Mono).
 
 ---
@@ -67,9 +70,12 @@ From quantum computing and autonomous robotics to renewable energy grids, embedd
 
 ```mermaid
 graph TD
-    Client["Client Browser (React 18 + Vite)"] -->|SPA Routes| Router["Client Router & Context Engines"]
-    Client -->|Dynamic Canvas| Canvas["3D Particle Physics Engine"]
-    Client -->|REST Fetch /api/*| VercelEdge["Vercel Edge & Serverless Functions"]
+    User["User Access"] --> WebBrowser["Mobile / Desktop Browser (Web / PWA)"]
+    User --> AndroidApp["Native Android Mobile Container (Capacitor)"]
+    
+    WebBrowser -->|Relative /api| VercelEdge["Vercel Edge & Serverless Functions"]
+    AndroidApp -->|Live Production REST API| VercelEdge
+    
     VercelEdge -->|Serverless Handlers| APIHandlers["api/*.js Endpoints"]
     APIHandlers -->|Persistence Layer| DB["JSON Database Engine + /tmp & Memory Cache"]
     
@@ -77,6 +83,7 @@ graph TD
         DevRunner["dev-runner.js (Orchestrator)"] --> FrontendDev["Vite Dev Server (:3000)"]
         DevRunner --> BackendDev["Express Backend Server (:5000)"]
         FrontendDev -->|Proxy /api| BackendDev
+        FrontendDev -->|Sync| AndroidNative["android/ (Native Gradle Project)"]
     end
 ```
 
@@ -84,13 +91,70 @@ graph TD
 
 | Layer | Technologies |
 | :--- | :--- |
+| **Mobile Native Container** | Capacitor 8 (`@capacitor/core`, `@capacitor/android`, `@capacitor/app`, `@capacitor/status-bar`, `@capacitor/splash-screen`) |
+| **PWA Engine** | Web App Manifest (`manifest.json`), Service Worker (`sw.js`), Cache API |
 | **Frontend Framework** | React 18, TypeScript, Vite 5 |
-| **Styling & Aesthetics** | Pure Modern CSS, Glassmorphism, CSS Custom Properties, Canvas Particle Physics |
+| **Styling & Aesthetics** | Pure Modern CSS, Glassmorphism, CSS Custom Properties, Safe Area Insets, Canvas Physics |
 | **Typography** | Outfit (Headings), Inter (Body UI), JetBrains Mono (Code/Math) |
 | **Icons & Visuals** | Lucide React, SVG Vector System, Canvas Confetti |
 | **Backend Runtime** | Node.js, Express 4, ES Modules (`import/export`) |
 | **Database & Cache** | File-backed JSON DB with automated seed generator and fail-safe serverless in-memory cache |
 | **Deployment Engine** | Vercel Edge CDN, Vercel Serverless Functions (`@vercel/node`) |
+
+---
+
+## 📱 Mobile Application (Android & PWA)
+
+The mobile transformation preserves the existing website and backend completely while adding native mobile distribution and browser installability:
+
+### 1. Capacitor Native Android Architecture
+- **Package Identifier**: `com.limohub.engineering`
+- **Application Name**: `LIMO Hub`
+- **Native Project Location**: [`android/`](android/)
+- **Native Integrations**:
+  - **Hardware / Gesture Back Button**: Intercepted in `src/App.tsx` via `@capacitor/app`. When on subpages, it navigates back in history; when on the Home page, it exits the application gracefully.
+  - **Status Bar**: Styled dark (`#0a0e17`) to seamlessly blend with the futuristic UI.
+  - **Splash Screen**: Centered launch screen with auto-hide upon web initialization.
+  - **Dynamic API Resolution**: Automatically switches from relative `/api` (used on the web) to the live production server (`https://temporary-express-tuba-avfyt8a.vercel.app/api`) when running inside the native APK.
+
+### 2. Mobile Development Commands
+
+| Command | Action |
+| :--- | :--- |
+| `pnpm run mobile:sync` | Compiles the Vite frontend and synchronizes web assets & plugins to `android/` |
+| `pnpm run mobile:open` | Opens the native Android project in Android Studio |
+| `pnpm run mobile:build:apk` | Assembles a Debug APK locally via Gradle wrapper (`gradlew assembleDebug`) |
+| `pnpm run mobile:build:aab` | Builds an Android App Bundle (`gradlew bundleRelease`) for Google Play |
+
+### 3. How to Build the APK Locally with Android Studio
+
+1. **Install Android Studio** ([Download Android Studio](https://developer.android.com/studio)).
+2. Synchronize your latest web build into the Android project:
+   ```bash
+   pnpm run mobile:sync
+   ```
+3. Open the project in Android Studio:
+   ```bash
+   pnpm run mobile:open
+   ```
+   *(Or launch Android Studio and select the `android/` folder inside this repository).*
+4. In Android Studio:
+   - Wait for Gradle sync to complete.
+   - Click **Build > Build Bundle(s) / APK(s) > Build APK(s)**.
+   - The generated APK will be at: `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+### 4. Automated Cloud Build via GitHub Actions
+
+A continuous integration workflow (`.github/workflows/ci-mobile-build.yml`) is included in the repository. Whenever code is pushed to `main`:
+1. It validates the web build.
+2. It sets up Java 21 & Android SDK.
+3. It compiles `app-debug.apk` and uploads it as a downloadable artifact under the **Actions** tab on GitHub.
+
+### 5. Progressive Web App (PWA) Installation
+
+Users can also install the application directly from any mobile or desktop browser without an app store:
+- **Android (Chrome)**: Tap the menu (three dots) > Tap **"Install app"** or **"Add to Home screen"**.
+- **iOS (Safari)**: Tap the Share button > Scroll down and tap **"Add to Home Screen"**.
 
 ---
 
@@ -150,7 +214,7 @@ cd Engineering-project-hub-
 
 ### Step 2: Install Dependencies
 
-Install all root dependencies (frontend, backend, and build tools):
+Install all root dependencies (frontend, backend, mobile tools, and build scripts):
 
 ```bash
 pnpm install
@@ -243,13 +307,31 @@ The platform provides a comprehensive JSON REST API used by the frontend and ava
 
 ```text
 Engineering-project-hub-/
+├── 📁 .github/                  # CI/CD Workflows
+│   └── 📁 workflows/
+│       ├── ci-mobile-build.yml  # Automated Web & Android APK GitHub Action
+│       └── datadog-synthetics.yml
+├── 📁 android/                  # Native Android Capacitor Project
+│   ├── 📁 app/                  # Android application module & source
+│   │   ├── 📁 src/main/
+│   │   │   ├── 📁 assets/public/ # Bundled web frontend build
+│   │   │   ├── 📁 java/         # MainActivity.java (BridgeActivity)
+│   │   │   ├── 📁 res/          # Android resources, colors, strings, drawables
+│   │   │   └── AndroidManifest.xml # Android permissions and activity declarations
+│   │   └── build.gradle         # App-level Gradle configuration (namespace: com.limohub.engineering)
+│   ├── build.gradle             # Project-level Gradle build file
+│   ├── gradlew & gradlew.bat    # Gradle wrapper scripts
+│   └── settings.gradle          # Gradle settings & plugin linking
 ├── 📁 api/                      # Vercel Serverless Function Handlers
 │   ├── categories.js            # GET /api/categories serverless endpoint
 │   ├── creators.js              # GET /api/creators serverless endpoint
 │   ├── health.js                # GET /api/health monitoring endpoint
 │   ├── index.js                 # Catch-all Express handler
 │   └── projects.js              # GET /api/projects query & filter endpoint
-├── 📁 public/                   # Static browser assets and favicons
+├── 📁 public/                   # Static browser assets, PWA manifest & Service Worker
+│   ├── favicon.svg              # Vector logo asset
+│   ├── manifest.json            # Web App Manifest (PWA metadata)
+│   └── sw.js                    # PWA Service Worker (offline caching)
 ├── 📁 server/                   # Express Backend Architecture
 │   ├── 📁 data/                 # Seed database JSON storage
 │   │   ├── db.json              # Primary active database
@@ -276,14 +358,15 @@ Engineering-project-hub-/
 │   │   ├── LoginPage.tsx        # Authentication & demo quick-login
 │   │   ├── RegisterPage.tsx     # User registration
 │   │   └── SettingsPage.tsx     # Preferences & platform settings
-│   ├── 📁 services/             # API client & fetch wrappers (api.ts)
+│   ├── 📁 services/             # Dynamic API client supporting Web & Native Mobile (api.ts)
 │   ├── 📁 types/                # TypeScript interface declarations
-│   ├── App.tsx                  # Client-side router & provider hierarchy
-│   ├── index.css                # Global design system tokens, themes & utilities
-│   └── main.tsx                 # React application mounting entrypoint
+│   ├── App.tsx                  # Client router, safe-area, Android back button & status bar
+│   ├── index.css                # Global design system tokens, themes & safe-area insets
+│   └── main.tsx                 # React application mounting & PWA registration
+├── capacitor.config.ts          # Capacitor mobile application configuration
 ├── dev-runner.js                # Dual-process orchestrator (Vite + Express concurrently)
-├── index.html                   # HTML5 shell with responsive typography
-├── package.json                 # Project dependencies & build scripts
+├── index.html                   # HTML5 shell with PWA manifest & viewport-fit=cover
+├── package.json                 # Project dependencies & mobile build scripts
 ├── tsconfig.json                # TypeScript compiler configuration
 ├── vercel.json                  # Vercel deployment rewrites & serverless configuration
 └── vite.config.ts               # Vite configuration & development proxy
@@ -291,23 +374,23 @@ Engineering-project-hub-/
 
 ---
 
-## ⚙️ Deployment Guide (Vercel)
+## ⚙️ Deployment Guide (Vercel & Mobile CI/CD)
 
-The repository is already configured with [`vercel.json`](vercel.json) to deploy both the Vite frontend and the serverless API functions seamlessly.
+The repository provides automated deployment pipelines for both web hosting and mobile compilation:
 
-### Deploying Your Own Fork:
+### 1. Website Continuous Deployment on Vercel
+The repository is integrated with Vercel. Whenever code is pushed to `main`:
+1. Vercel automatically runs `pnpm run build` to build the web frontend.
+2. Vercel compiles the serverless API handlers in `api/`.
+3. The deployment is updated globally on Vercel's Edge Network at [https://temporary-express-tuba-avfyt8a.vercel.app](https://temporary-express-tuba-avfyt8a.vercel.app).
 
-1. **Push your code to GitHub**:
-   ```bash
-   git push origin main
-   ```
-2. Go to **[vercel.com/new](https://vercel.com/new)**.
-3. Import your **`Engineering-project-hub-`** repository.
-4. Vercel automatically detects the framework settings:
-   - **Framework Preset**: `Vite`
-   - **Build Command**: `pnpm run build` *(or `npm run build`)*
-   - **Output Directory**: `dist`
-5. Click **Deploy**. Both the client and the `/api/*` serverless functions will be live in under 60 seconds.
+### 2. Synchronizing Future Mobile App Updates
+When you update the frontend or backend in this repository:
+1. **Website Updates**: Go live automatically on Vercel via Git push.
+2. **Mobile App Updates**:
+   - Run `pnpm run mobile:sync` to copy the updated build into the `android/` project.
+   - Re-run `pnpm run mobile:build:apk` or rebuild in Android Studio to produce the updated APK.
+   - Or let the GitHub Actions workflow automatically compile the new APK.
 
 ---
 

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LIMO Hub</string>
+    <string name="title_activity_main">LIMO Hub</string>
+    <string name="package_name">com.limohub.engineering</string>
+    <string name="custom_url_scheme">com.limohub.engineering</string>
+</resources>

@@ -1,0 +1,19 @@
+{
+  "name": "LIMO — Engineering Project Hub",
+  "short_name": "LIMO Hub",
+  "description": "Next-generation engineering showcase, prototypes, simulations, and innovative technologies.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0e17",
+  "theme_color": "#0a0e17",
+  "categories": ["education", "developer", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

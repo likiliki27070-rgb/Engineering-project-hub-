@@ -23,6 +23,10 @@ import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
 import { DeveloperPortalPage } from './pages/DeveloperPortalPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { Capacitor } from '@capacitor/core';
+import { App as CapApp } from '@capacitor/app';
+import { StatusBar, Style } from '@capacitor/status-bar';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 const AppContent: React.FC = () => {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -42,6 +46,31 @@ const AppContent: React.FC = () => {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Native Mobile container integration (Android Back Button, Status Bar, Splash Screen)
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+
+    // Hide splash screen smoothly on app load
+    SplashScreen.hide().catch(() => {});
+    StatusBar.setStyle({ style: Style.Dark }).catch(() => {});
+    StatusBar.setBackgroundColor({ color: '#0a0e17' }).catch(() => {});
+
+    // Native Android hardware/gesture back button handling
+    const backListenerPromise = CapApp.addListener('backButton', () => {
+      const path = (window.location.pathname || '/').split('?')[0];
+      if (path === '/' || path === '') {
+        CapApp.exitApp();
+      } else {
+        window.history.back();
+      }
+    });
+
+    return () => {
+      backListenerPromise.then(listener => listener.remove()).catch(() => {});
+    };
+  }, []);
+
 
   // Simple, robust client router
   const renderCurrentPage = () => {

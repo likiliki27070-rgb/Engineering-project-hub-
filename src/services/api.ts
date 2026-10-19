@@ -1,6 +1,12 @@
+import { Capacitor } from '@capacitor/core';
 import { Project, User, Creator, Category, Notification, ActivityLog } from '../types';
 
-const API_BASE = '/api';
+// In native mobile container, point to production backend; on web, use relative '/api'
+const PROD_BACKEND_URL = 'https://temporary-express-tuba-avfyt8a.vercel.app';
+const API_BASE = Capacitor.isNativePlatform()
+  ? (import.meta.env.VITE_API_BASE_URL || `${PROD_BACKEND_URL}/api`)
+  : (import.meta.env.VITE_API_BASE_URL ? `${import.meta.env.VITE_API_BASE_URL}/api` : '/api');
+
 
 async function fetchJSON<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${url}`, {
