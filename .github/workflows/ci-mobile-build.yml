@@ -14,16 +14,17 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Enable Corepack & pnpm
-        run: corepack enable
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        run: pnpm install --prod=false
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Web Application
         run: pnpm run build
@@ -42,16 +43,17 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Enable Corepack & pnpm
-        run: corepack enable
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        run: pnpm install --prod=false
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Web Frontend Assets
         run: pnpm run build
