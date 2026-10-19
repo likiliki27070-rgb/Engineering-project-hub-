@@ -716,34 +716,44 @@ Minimizes the overlap function of pairwise routes weighted by road capacity and 
   }
 };
 
+let memoryDb = null;
+
 // Initialize DB file if not present
 export function initDatabase() {
-  if (!fs.existsSync(DB_FILE)) {
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    console.log('[DB] Database initialized at', DB_FILE);
+  if (memoryDb) return;
+  try {
+    if (fs.existsSync(DB_FILE)) {
+      const raw = fs.readFileSync(DB_FILE, 'utf-8');
+      memoryDb = JSON.parse(raw);
+      return;
+    }
+  } catch (err) {
+    // ignore
+  }
+
+  memoryDb = JSON.parse(JSON.stringify(initialData));
+  try {
+    const dir = path.dirname(DB_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(DB_FILE, JSON.stringify(memoryDb, null, 2), 'utf-8');
+  } catch (e) {
+    // Serverless read-only fallback
   }
 }
 
 export function readDatabase() {
-  initDatabase();
-  try {
-    const raw = fs.readFileSync(DB_FILE, 'utf-8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('[DB] Error reading database, reinitializing with defaults', err);
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    return initialData;
-  }
+  if (!memoryDb) initDatabase();
+  return memoryDb;
 }
 
 export function writeDatabase(data) {
+  memoryDb = data;
   try {
     fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8');
-    return true;
   } catch (err) {
-    console.error('[DB] Error writing to database', err);
-    return false;
+    // In serverless, memory persistence is maintained across requests in warm instance
   }
+  return true;
 }
 
 export default {
