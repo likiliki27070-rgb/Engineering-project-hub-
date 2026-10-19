@@ -23,7 +23,7 @@ jobs:
         run: corepack enable
 
       - name: Install Dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --prod=false
 
       - name: Build Web Application
         run: pnpm run build
@@ -51,7 +51,7 @@ jobs:
         run: corepack enable
 
       - name: Install Dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --prod=false
 
       - name: Build Web Frontend Assets
         run: pnpm run build
@@ -60,7 +60,7 @@ jobs:
         run: chmod +x android/gradlew
 
       - name: Sync Capacitor Android
-        run: pnpm exec cap sync android
+        run: npx cap sync android
 
       - name: Build Android Debug APK
         run: |
